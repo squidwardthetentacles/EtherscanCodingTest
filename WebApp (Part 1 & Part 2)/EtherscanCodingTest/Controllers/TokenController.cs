@@ -16,6 +16,12 @@ namespace EtherscanCodingTest.Controllers
 
         #region Query
 
+        /// <summary>
+        /// Get all token with pagination and page size limits.
+        /// </summary>
+        /// <param name="skipCount"></param>
+        /// <param name="maxResultCount"></param>
+        /// <returns>List of token</returns>
         [HttpGet]
         public IActionResult GetAll(int skipCount, int maxResultCount)
         {
@@ -146,6 +152,10 @@ namespace EtherscanCodingTest.Controllers
             return Json(output);
         }
 
+        /// <summary>
+        /// Get all token's total supply in (%), grouped by each token symbol.
+        /// </summary>
+        /// <returns>List of Token Name with Total Supply (%)</returns>
         [HttpGet]
         public async Task<IActionResult> GetAllTotalSupplyPercentage()
         {
@@ -283,6 +293,11 @@ namespace EtherscanCodingTest.Controllers
             }
         }
 
+        /// <summary>
+        /// Insert new token record or update existing record with token id and data.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns>Success status and If failed, failure message is returned together</returns>
         [HttpPost]
         public async Task<IActionResult> CreateOrUpdate([FromBody] TokenModel token)
         {
