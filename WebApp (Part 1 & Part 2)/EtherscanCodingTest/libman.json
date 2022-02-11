@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "datatables@1.10.21",
+      "destination": "wwwroot/css/datatables/",
+      "files": [
+        "css/jquery.dataTables.min.css"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "sweetalert2@11.4.0",
+      "destination": "wwwroot/lib/sweetalert2/"
+    },
+    {
+      "library": "highcharts@9.3.3",
+      "destination": "wwwroot/lib/highcharts/"
+    }
+  ]
+}

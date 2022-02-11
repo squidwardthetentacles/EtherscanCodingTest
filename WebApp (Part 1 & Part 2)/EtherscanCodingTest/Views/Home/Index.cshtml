@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Etherscan";
+}
+
+<div class="text-center">
+    
+    <div class="row">
+        <h5 class="text-start">Save / Update Token</h5>
+        <div class="col-4">
+            <form>
+              <div class="row mb-3">
+                <label for="createTokenName" class="col-sm-5 col-form-label text-start">Name</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="createTokenName" placeholder="Name" minlength="1" maxlength="50">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="createTokenSymbol" class="col-sm-5 col-form-label text-start">Symbol</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="createTokenSymbol" placeholder="Symbol" minlength="1" maxlength="5">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="createTokenContractAddress" class="col-sm-5 col-form-label text-start">Contract Address</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="createTokenContractAddress" placeholder="Contract Address" minlength="1" maxlength="66">
+                </div>
+              </div>
+              
+              <div class="row mb-3">
+                <label for="createTokenTotalSupply" class="col-sm-5 col-form-label text-start">Total Supply</label>
+                <div class="col-sm-5">
+                  <input type="number" class="form-control" id="createTokenTotalSupply" placeholder="Total Supply" min="0" >
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="createTokenTotalHolders" class="col-sm-5 col-form-label text-start">Total Holders</label>
+                <div class="col-sm-5">
+                  <input type="number" class="form-control" id="createTokenTotalHolders" placeholder="Total Holders" min="0" >
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-5 text-start">
+                    <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="reset()">Reset</button>
+                </div>
+              </div>
+
+            </form>
+        </div>
+
+        <div class="col-8">
+            <div id="chart"></div>
+        </div>
+    </div>
+    
+    <hr />
+    
+    <div>
+        <div class="row">
+            <div class="col-12">
+
+                <table id="token-datatable" class="display token-table" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Rank</th>
+                      <th>Symbol</th>
+                      <th>Name</th>
+                      <th>Contract Address</th>
+                      <th>Total Holders</th>
+                      <th>Total Supply</th>
+                      <th>Total Supply (%)</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<partial name="../Home/Modals/_ViewTokenModal.cshtml">
+<partial name="../Home/Modals/_EditTokenModal.cshtml">
